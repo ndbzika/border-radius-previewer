@@ -1,0 +1,57 @@
+.border_radius{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2.4rem 19.89rem 2.4rem;
+    grid-template-rows: 20px 10.4rem 20px;
+    align-items: center;
+    justify-content: center;
+    grid-template-areas:
+    'top-left . top-right'
+    '. cx .'
+    'bottom-left . bottom-right';
+
+
+    .input_border{
+        width: 2.5vw;
+        border: 0.3px solid #d5d5d5;
+        background-color: #424242;
+        color: #ffffff;
+    }
+    input[type=number]::-webkit-inner-spin-button { 
+        -webkit-appearance: none;
+        
+    }
+    input[type=number] { 
+        -moz-appearance: textfield;
+        appearance: textfield;
+    
+    }
+    
+
+    .caixa{
+        background-color: #ffffff;
+        border: 1px solid #4d4d4d;
+        width: 20vw;
+        height: 20vh;
+        grid-area: cx;
+
+        .command{
+            width: 17vw;
+            height: 15vh;
+            border: 1px solid #dfdfdf;
+        }
+    }
+
+    #top_left{
+        grid-area: top-left;
+    }
+    #top_right{
+        grid-area: top-right;
+    }
+    #bottom_left{
+        grid-area: bottom-left;
+    }
+    #bottom_right{
+        grid-area: bottom-right;
+    }
+}
