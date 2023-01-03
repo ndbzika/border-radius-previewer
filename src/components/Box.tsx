@@ -7,55 +7,42 @@ export function Box() {
     const [inputTopRight, setInputTopRight] = useState(0);
     const [inputBottomLeft, setInputBottomLeft] = useState(0);
     const [inputBottomRight, setInputBottomRight] = useState(0);
-
-    class values {
-        tl
-        tr
-        bl
-        br
-        constructor(tl:number,tr:number,bl:number,br:number){
-            this.tl = tl
-            this.tr = tr
-            this.bl = bl
-            this.br = br
-        }
-    }
-    interface iValues {
-        tl:number
-        tr:number
-        bl:number
-        br:number
-    }
-
+    
+    let box: HTMLElement = document.querySelector(".caixa") as HTMLElement;
+    
     const handleInputTopLeft = (e:any) :void => {
-        let {value} = e.target.value;
+        let {value} = e.target
         setInputTopLeft(value)
-        setBorderRadius;
+        setBorderRadius();
     }
     const handleInputTopRight = (e:any) :void => {
-        let {value} = e.target.value
+        let {value} = e.target
         setInputTopRight(value)
-        setBorderRadius;
+        setBorderRadius();
     }
     const handleInputBottomLeft = (e:any) :void => {
-        let {value} = e.target.value
+        let {value} = e.target
         setInputBottomLeft(value)
-        setBorderRadius;
+        setBorderRadius();
     }
     const handleInputBottomRight = (e:any) :void => {
-        let {value} = e.target.value
+        let {value} = e.target
         setInputBottomRight(value)
-        console.log(inputBottomRight);
+        setBorderRadius();
+    }
+
+    
+    const setBorderRadius = ():void => {
+        box.removeAttribute('style')
+        console.log(box);
         
-        setBorderRadius;
+        box.style.cssText =
+            `border-top-left-radius: ${inputTopLeft}px;` +
+            `border-top-right-radius: ${inputTopRight}px;` +
+            `border-bottom-right-radius: ${inputBottomRight}px;`+
+            `border-bottom-left-radius: ${inputBottomLeft}px;`
     }
-
-    const setBorderRadius = (border:iValues):void => {
-        //let valores = new values(setInputTopLeft,setInputTopRight,setInputBottomLeft,setInputBottomRight)
-        let box: HTMLElement = document.querySelector(".caixa") as HTMLElement;
-        console.log()
-    }
-
+    
     return(
         <div className="border_radius">
             <input type="number" name="border-top-left" value={inputTopLeft} id="top_left" className="input_border" onChange={handleInputTopLeft} />
