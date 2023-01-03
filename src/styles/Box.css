@@ -6,6 +6,10 @@
   align-items: center;
   justify-content: center;
   grid-template-areas: "top-left . top-right" ". cx ." "bottom-left . bottom-right";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .border_radius .input_border {
   width: 2.5vw;
@@ -27,7 +31,6 @@
   width: 20vw;
   height: 20vh;
   grid-area: cx;
-  position: relative;
 }
 .border_radius .caixa .command {
   width: 17vw;

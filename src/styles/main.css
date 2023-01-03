@@ -2,4 +2,8 @@
 *::after,
 *::before {
   box-sizing: border-box;
+}
+
+body {
+  background-color: #aaaaaa;
 }/*# sourceMappingURL=main.css.map */
