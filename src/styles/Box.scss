@@ -34,11 +34,16 @@
         width: 20vw;
         height: 20vh;
         grid-area: cx;
+        position: relative;
 
         .command{
             width: 17vw;
             height: 15vh;
             border: 1px solid #dfdfdf;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     }
 

@@ -9,7 +9,13 @@ export function Box() {
     const [inputBottomRight, setInputBottomRight] = useState(0);
     
     let box: HTMLElement = document.querySelector(".caixa") as HTMLElement;
+    let codigo: HTMLElement = document.querySelector('code') as HTMLElement;
     
+    let textoCss = `border-top-left-radius: ${inputTopLeft}px;` +
+    `border-top-right-radius: ${inputTopRight}px;` +
+    `border-bottom-right-radius: ${inputBottomRight}px;`+
+    `border-bottom-left-radius: ${inputBottomLeft}px;`
+
     const handleInputTopLeft = (e:any) :void => {
         let {value} = e.target
         setInputTopLeft(value)
@@ -23,6 +29,8 @@ export function Box() {
     const handleInputBottomLeft = (e:any) :void => {
         let {value} = e.target
         setInputBottomLeft(value)
+        console.log(value);
+        
         setBorderRadius();
     }
     const handleInputBottomRight = (e:any) :void => {
@@ -36,20 +44,19 @@ export function Box() {
         box.removeAttribute('style')
         console.log(box);
         
-        box.style.cssText =
-            `border-top-left-radius: ${inputTopLeft}px;` +
-            `border-top-right-radius: ${inputTopRight}px;` +
-            `border-bottom-right-radius: ${inputBottomRight}px;`+
-            `border-bottom-left-radius: ${inputBottomLeft}px;`
+        box.style.cssText = textoCss;
+        codigo.textContent = '';
+        codigo.textContent = textoCss;
+        
     }
     
     return(
         <div className="border_radius">
-            <input type="number" name="border-top-left" value={inputTopLeft} id="top_left" className="input_border" onChange={handleInputTopLeft} />
+            <input type="number" name="border-top-left" value={inputTopLeft} id="top_left" className="input_border" onChange={handleInputTopLeft}/>
             <input type="number" name="border-top-right" value={inputTopRight} id="top_right" className="input_border" onChange={handleInputTopRight} />
             <div className="caixa">
                 <div className='command'>
-                    <code>fvck</code>
+                    <code>Aplique as bordas desejadas</code>
                 </div>
             </div>
             <input type="number" name="border-bottom-left" value={inputBottomLeft} id="bottom_left" className="input_border" onChange={handleInputBottomLeft} />
