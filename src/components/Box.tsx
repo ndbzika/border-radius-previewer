@@ -4,10 +4,10 @@ import { BorderRadius } from "../types/borderRadius";
 
 
 export function Box() {
-    const [inputTopLeft, setInputTopLeft] = useState('');
-    const [inputTopRight, setInputTopRight] = useState('');
-    const [inputBottomLeft, setInputBottomLeft] = useState('');
-    const [inputBottomRight, setInputBottomRight] = useState('');
+    const [inputTopLeft, setInputTopLeft] = useState('0');
+    const [inputTopRight, setInputTopRight] = useState('0');
+    const [inputBottomLeft, setInputBottomLeft] = useState('0');
+    const [inputBottomRight, setInputBottomRight] = useState('0');
 
     function borderRadius(): BorderRadius{
         const borders = {
