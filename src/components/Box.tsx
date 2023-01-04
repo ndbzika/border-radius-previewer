@@ -1,4 +1,5 @@
-import React, { ChangeEvent, useState } from "react";
+import { Console, log } from "console";
+import React, { ChangeEvent, DetailedHTMLProps, MouseEventHandler, useState } from "react";
 import '../styles/Box.css'
 import { BorderRadius } from "../types/borderRadius";
 
@@ -22,7 +23,6 @@ export function Box() {
     const handleInputTopLeft = (event:ChangeEvent) :void => {
         let {value} = event.target as HTMLInputElement
         setInputTopLeft(value)
-        console.log(borderRadius());
         
     }
 
@@ -41,16 +41,29 @@ export function Box() {
         setInputBottomRight(value)
     }
 
-    const handleCopyText = (e:any) => {
-        e.select();
-        navigator.clipboard.writeText(e.value);
+    const handleCopyText = () :void => {
+
     }
-    const text = () => {
+    const bl = () => {
         return{
-            __html: `border-bottom-left-radius: ${borderRadius().borderBottomLeftRadius};
-            border-bottom-right: ${borderRadius().borderBottomRightRadius};
-            border-top-left-radius: ${borderRadius().borderTopLeftRadius};
-            border-top-right-radius: ${borderRadius().borderTopRightRadius}`
+            __html: `border-bottom-left-radius:${borderRadius().borderBottomLeftRadius};`
+
+        }
+    }
+    const br = () => {
+        return{
+            __html: `border-bottom-right-radius:${borderRadius().borderBottomRightRadius};`
+
+        }
+    }
+    const tl = () => {
+        return{
+            __html: `border-top-left-radius:${borderRadius().borderTopLeftRadius};`
+        }
+    }
+    const tr = () => {
+        return{
+            __html: `border-top-right-radius:${borderRadius().borderTopRightRadius};`
         }
     }
     return(
@@ -58,8 +71,14 @@ export function Box() {
             <input type="number" name="border-top-left" placeholder="0" value={inputTopLeft} id="top_left" className="input_border" onChange={handleInputTopLeft}/>
             <input type="number" name="border-top-right" placeholder="0" value={inputTopRight} id="top_right" className="input_border" onChange={handleInputTopRight} />
             <div style={borderRadius()} className="caixa">
-                <div  className='command'>
-                    <code dangerouslySetInnerHTML={text()}></code>
+                <div className='command'>
+                    <code dangerouslySetInnerHTML={bl()}></code>
+                    <br />
+                    <code dangerouslySetInnerHTML={br()}></code>
+                    <br />
+                    <code dangerouslySetInnerHTML={tl()}></code>
+                    <br />
+                    <code dangerouslySetInnerHTML={tr()}></code>
                 </div>
             </div>
             <input type="number" name="border-bottom-left" placeholder="0" value={inputBottomLeft} id="bottom_left" className="input_border" onChange={handleInputBottomLeft} />
