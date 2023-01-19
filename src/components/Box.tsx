@@ -49,10 +49,11 @@ export function Box() {
             <div style={borderRadius()} className="caixa">
                 <div className='command'>
                     <code>
-                        border-bottom-left-radius: {inputBottomLeft}px;
-                        border-bottom-right-radius:  {inputBottomRight}px;
-                        border-top-left-radius: {inputTopLeft}px;
-                        border-top-right-radius: {inputTopRight}px;
+                        {(inputBottomLeft === inputBottomRight && inputTopLeft === inputTopRight && inputBottomLeft === inputTopLeft) ? 
+                        `border-radius: ${inputTopLeft}px` : `border-bottom-left-radius: ${inputBottomLeft}px;
+                        border-bottom-right-radius:  ${inputBottomRight}px;
+                        border-top-left-radius: ${inputTopLeft}px;
+                        border-top-right-radius: ${inputTopRight}px;`}
                     </code>
                 </div>
             </div>

@@ -1,18 +1,14 @@
 .border_radius{
-    margin: 0 auto;
+    margin: 15% auto;
     display: grid;
     grid-template-columns: 2.4rem 19.89rem 2.4rem;
-    grid-template-rows: 20px 10.4rem 20px;
+    grid-template-rows: 1.5rem 10.4rem 20px;
     align-items: center;
     justify-content: center;
     grid-template-areas:
     'top-left . top-right'
     '. cx .'
     'bottom-left . bottom-right';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 
 
     .input_border{
